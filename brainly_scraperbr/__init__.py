@@ -19,6 +19,7 @@ class answers:
     def __init__(self, json) -> None:
         self.content = json["content"]
         self.attachments = [attachment(x) for x in json["attachments"]]
+        self.thankscount = json["thanksCount"]
     def __str__(self) -> str:
         return f"<[ type Text {'& ATTACHMENT' if self.attachments else ''}]>"
     def __repr__(self) -> str:
@@ -47,6 +48,6 @@ def brainly(query:str, first:int,after=None):
         i["node"]["content"] = html_text.parse_html(i["node"]["content"]).text_content()
         print("[API] this is I" + str(i))
         for iX in i["node"]["answers"]["nodes"]:
-            iX["content","attachments"] = html_text.parse_html(iX["content","attachments"]).text_content()
+            iX["content"] = html_text.parse_html(iX["content"]).text_content()
             print("[API] this is IX" + str(iX))
     return [content(js) for js in req["data"]["questionSearch"]["edges"]]
