@@ -6,13 +6,12 @@ this_directory = path.abspath(path.dirname(__file__))
 setup(
   name = 'brainly_scraper',        
   packages = ['brainly_scraper'],   
-  version = '0.0.1',    
+  version = '0.0.2',    
   license='MIT',     
   description = 'brainly scraper', 
-  author = 'Krypton Byte',                  
-  author_email = 'galaxyvplus6434@gmail.com',     
-  url = 'https://github.com/krypton-byte/brainly-scraper',   
-  download_url = 'https://github.com/krypton-byte/brainly-scraper/archive/0.0.1.tar.gz',    
+  author = 'bieldlucacn',                  
+  author_email = 'aaa@gmail.com',     
+  url = 'https://github.com/krypton-byte/brainly-scraper',       
   keywords = ['brainly', 'scraper'], 
   install_requires=[           
           'requests',
