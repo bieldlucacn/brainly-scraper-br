@@ -11,7 +11,7 @@ setup(
   description = 'brainly scraper', 
   author = 'bieldlucacn',                  
   author_email = 'aaa@gmail.com',     
-  url = 'https://github.com/krypton-byte/brainly-scraper',       
+  url = 'https://github.com/bieldlucacn/brainly-scraper-br',       
   keywords = ['brainly', 'scraper'], 
   install_requires=[           
           'requests',
