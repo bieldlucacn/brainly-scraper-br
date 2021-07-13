@@ -6,7 +6,7 @@ this_directory = path.abspath(path.dirname(__file__))
 setup(
   name = 'brainly_scraperbr',        
   packages = ['brainly_scraperbr'],   
-  version = '0.0.11T',    
+  version = '0.0.12T',    
   license='MIT',     
   description = 'brainly scraper brasil', 
   author = 'bieldlucacn',                  
