@@ -4,15 +4,15 @@ from os import path
 this_directory = path.abspath(path.dirname(__file__))
 
 setup(
-  name = 'brainly_scraper',        
-  packages = ['brainly_scraper'],   
+  name = 'brainly_scraperbr',        
+  packages = ['brainly_scraperbr'],   
   version = '0.0.2',    
   license='MIT',     
-  description = 'brainly scraper', 
+  description = 'brainly scraper brasil', 
   author = 'bieldlucacn',                  
   author_email = 'aaa@gmail.com',     
   url = 'https://github.com/bieldlucacn/brainly-scraper-br',       
-  keywords = ['brainly', 'scraper'], 
+  keywords = ['brainly', 'scraper','brasil'], 
   install_requires=[           
           'requests',
           'html_text'
