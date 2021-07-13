@@ -40,7 +40,7 @@ class content:
     def __str__(self) -> str:
         return self.__repr__().__str__()
 def brainly(query:str, first:int,after=None):
-    body={'operationName': 'SearchQuery', 'variables': {'query': query, 'after': after, 'first': first}, 'query': 'query SearchQuery($query: String!, $first: Int!, $after: PT) {\n\tquestionSearch(query: $query, first: $first, after: $after) {\n\tedges {\n\t  node {\ncontent\n\t\tattachments{\nurl\n}\n\t\tanswers {\n\t\t\tnodes {\ncontent\n\t\t\t\tattachments{\nurl\n}\n}\n}\n}\n}\n}\n}\n'}
+    body={'operationName': 'SearchQuery', 'variables': {'query': query, 'after': after, 'first': first}, 'query': 'query SearchQuery($query: String!, $first: Int!, $after: ID) {\n\tquestionSearch(query: $query, first: $first, after: $after) {\n\tedges {\n\t  node {\ncontent\n\t\tattachments{\nurl\n}\n\t\tanswers {\n\t\t\tnodes {\ncontent\n\t\t\t\tattachments{\nurl\n}\n}\n}\n}\n}\n}\n}\n'}
     req=requests.post("https://brainly.com.br/graphql/pt", headers=header, json=body).json()
     print(req)
     for i in req["data"]["questionSearch"]["edges"]:
