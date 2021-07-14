@@ -7,6 +7,6 @@ Esse scraper só tem suporte para a versão em Português do Brainly, porém mud
 
 ## Como instalar
 ```bash
-> python3 -m pip install git+https://github.com/bieldlucacn/brainly-scraper-br
+python3 -m pip install git+https://github.com/bieldlucacn/brainly-scraper-br
 ```
 ### <a href="https://krypton-byte.github.io/brainly-scraper/"> Documentation</a> (vou atualizar isso em breve)
