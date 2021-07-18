@@ -49,5 +49,5 @@ def brainly(query:str, first:int,after=None):
     for i in req["data"]["questionSearch"]["edges"]:
         i["node"]["content"] = html_text.parse_html(i["node"]["content"]).text_content()
         for iX in i["node"]["answers"]["nodes"]:
-            iX["content"] = html_text.parse_html(iX["content"]).text_content()
+            iX["content"] = html_text.parse_html(iX["content"])
     return [content(js) for js in req["data"]["questionSearch"]["edges"]]
