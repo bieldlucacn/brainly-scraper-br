@@ -47,7 +47,7 @@ def brainly(query:str, first:int,after=None):
     req=requests.post("https://brainly.com.br/graphql/pt", headers=header, json=body).json()
     print(req)
     for i in req["data"]["questionSearch"]["edges"]:
-        i["node"]["content"] = html_text.parse_html(i["node"]["content"]).text_content()
+        i["node"]["content"] = html_text.parse_html(i["node"]["content"]).extract_text()
         for iX in i["node"]["answers"]["nodes"]:
-            iX["content"] = html_text.parse_html(iX["content"]).text_content()
+            iX["content"] = html_text.parse_html(iX["content"]).extract_text()
     return [content(js) for js in req["data"]["questionSearch"]["edges"]]
