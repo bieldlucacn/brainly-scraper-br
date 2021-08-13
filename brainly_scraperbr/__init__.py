@@ -2,7 +2,7 @@ from io import BytesIO
 import requests
 import html_text
 
-header = {'host': 'brainly.com', 'content-type': 'application/json; charset=utf-8',
+header = {'host': 'brainly.co.id', 'content-type': 'application/json; charset=utf-8',
           'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0'}
 
 
@@ -68,7 +68,7 @@ def brainly(query: str, first: int, after=None):
     body = {'operationName': 'SearchQuery', 'variables': {'query': query, 'after': after, 'first': first},
             'query': 'query SearchQuery($query: String!, $first: Int!, $after: ID) {\n\tquestionSearch(query: $query, first: $first, after: $after) {\n\tedges {\n\t  node {\ncontent\n\t\tattachments{\nurl\n}\n\t\tanswers {\n\t\t\tnodes {\ncontent\n\t\t\t\tattachments{\nurl\n}\nthanksCount\nratesCount\nrating\n}\n}\n}\n}\n}\n}\n'}
     print(body)
-    req = requests.get("https://brainly.com/graphql/pt", headers=header, json=body).json()
+    req = requests.post("https://brainly.co.id/graphql/pt", headers=header, json=body).json()
     print(req)
     for i in req["data"]["questionSearch"]["edges"]:
         i["node"]["content"] = html_text.parse_html(i["node"]["content"]).text_content()

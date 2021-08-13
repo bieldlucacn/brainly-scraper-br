@@ -4,7 +4,7 @@ header={'host': 'brainly.co.id', 'content-type': 'application/json; charset=utf-
 class attachment:
     def __init__(self, url) -> None:
         self.url = url["url"]
-        self.content =requests.get(self.url,  stream=True)
+        self.content = requests.get(self.url,  stream=True)
         self.size = int(self.content.headers["Content-Length"])
     def download(self, out=False):
         if isinstance(out, str):
